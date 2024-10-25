@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkanurag_portfolio=self.webpackChunkanurag_portfolio||[]).push([[850],{850:(e,t,l)=>{l.r(t),l.d(t,{default:()=>s});var r=l(579);const s=function(){return(0,r.jsx)("div",{className:"w-full flex justify-center mb-8",children:(0,r.jsx)("div",{className:"w-26 h-26 flex items-center justify-center text-gray text-5xl font-bold ",children:"..."})})}}}]);
+//# sourceMappingURL=850.c40f3dc1.chunk.js.map
