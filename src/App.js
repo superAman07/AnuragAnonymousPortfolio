@@ -14,12 +14,12 @@ function App() {
           <Header />
         </Suspense>
         <Dot />
-        <Suspense fallback={<div>Loading About Section...</div>}>
-          <About />
-        </Suspense>
-        <Dot />
         <Suspense fallback={<div>Loading Projects...</div>}>
           <Projects />
+        </Suspense>
+        <Dot />
+        <Suspense fallback={<div>Loading About Section...</div>}>
+          <About />
         </Suspense>
         <Dot />
         <Suspense fallback={<div>Loading Contact Section...</div>}>
