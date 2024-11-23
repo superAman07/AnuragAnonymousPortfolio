@@ -33,7 +33,7 @@ const Projects = () => {
             <div className="flex-shrink-0 w-full sm:w-1/2 transition-transform duration-300 transform hover:scale-105">
               <iframe
                 src={value.videoUrl}
-                className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-md shadow-lg"
+                className="w-full h-[100%] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-md shadow-lg"
                 title={value.title}
                 allowFullScreen
               ></iframe>
