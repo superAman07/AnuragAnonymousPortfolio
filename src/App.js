@@ -8,7 +8,7 @@ const Dot = lazy(() => import("./components/Dot/dot.jsx"));
 
 function App() {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <Suspense fallback={<div className="text-center py-10">Anurag's Portfolio is loading...</div>}>
         <Suspense fallback={<div>Loading Header...</div>}>
           <Header />

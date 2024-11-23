@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS CSS
+import 'aos/dist/aos.css'; 
 import { Collections } from './ProjectCollections';
 
-const Projects = () => {
-  // Initialize AOS
+const Projects = () => { 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      easing: 'ease-in-out', // Smooth easing
-      once: false, // Allow animations to repeat
-      mirror: true, // Repeat animation when scrolling up
+      duration: 1000,  
+      easing: 'ease-in-out',  
+      once: false, 
+      mirror: true,  
     });
   }, []);
 
@@ -26,12 +25,11 @@ const Projects = () => {
         {Collections.map((value, index) => (
           <div
             key={value.id}
-            data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'} // Alternate animation direction
+            data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}  
             className={`flex flex-col ${
               index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
             } items-center w-full lg:w-4/5 gap-4`}
-          >
-            {/* Video Section */}
+          > 
             <div className="flex-shrink-0 w-full sm:w-1/2 transition-transform duration-300 transform hover:scale-105">
               <iframe
                 src={value.videoUrl}
@@ -39,8 +37,7 @@ const Projects = () => {
                 title={value.title}
                 allowFullScreen
               ></iframe>
-            </div>
-            {/* Description Section */}
+            </div> 
             <div
               className="w-full sm:w-1/2 px-5 text-center sm:text-left"
               data-aos="fade-up"
