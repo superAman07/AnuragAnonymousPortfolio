@@ -102,7 +102,7 @@ const Header = () => {
       {/* Scroll Down Button */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white">
         <motion.a
-          href="#about"
+          href="#projects"
           className="underline font-medium text-sm md:text-md hover:text-gray-300 transition duration-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
