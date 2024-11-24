@@ -47,7 +47,7 @@ const Navbar = () => {
         {/* Desktop Navbar Links (for large screens) */}
         {isLargeScreen ? (
           <motion.ul className="hidden md:flex space-x-6">
-            {['Projects', 'About', 'Contact'].map((item) => (
+            {['Projects','About','Contact'].map((item) => (
               <li key={item}>
                 <motion.a
                   href={`#${item.toLowerCase()}`}
@@ -62,20 +62,6 @@ const Navbar = () => {
         ) : (
           <div />
         )}
-        
-        {/* Hamburger Menu for Large Screen (3 dots) */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="focus:outline-none"
-            aria-expanded={isOpen}
-            aria-controls="mobile-menu"
-          >
-            <span className={`block w-8 h-1 bg-gray-600 mb-1 transition-transform ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block w-8 h-1 bg-gray-600 mb-1 transition-opacity ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-            <span className={`block w-8 h-1 bg-gray-600 transition-transform ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-          </button>
-        </div>
       </div>
 
       {/* Mobile Menu Dropdown */}

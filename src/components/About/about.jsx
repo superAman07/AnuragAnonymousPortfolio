@@ -20,13 +20,7 @@ const About = () => {
         <p className="text-gray-200 text-2xl text-center italic mb-6">
           "I'm no one special, just a guy with some skills <br/> trying to be better."
         </p>
-        {/* <IntroButton
-          href={"mailto:anuragpal63866@gmail.com"}
-          className={"relative pl-1 text-center pb-5"}
-          name={"Text me"}
-        /> */} 
-        <a href='contact'>Text me</a>
-
+        <button><a href='contact'>Text me</a></button>
       </div>
     </section>
   );
