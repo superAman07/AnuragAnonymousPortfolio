@@ -25,28 +25,28 @@ const Projects = () => {
         {Collections.map((value, index) => (
           <div
             key={value.id}
-            data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}  
-            className={`flex flex-col ${
-              index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'
-            } items-center w-full lg:w-4/5 gap-4`}
+            data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+            className={`flex flex-col ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} items-center w-full lg:w-4/5 gap-4`}
           > 
             <div className="flex-shrink-0 w-full sm:w-1/2 transition-transform duration-300 transform hover:scale-105">
-              <iframe
-                src={value.videoUrl}
-                className="w-full h-full sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-md shadow-lg"
-                title={value.title}
-                allowFullScreen
-              ></iframe>
-            </div> 
+              <div className="relative w-full pt-[56.25%]">
+                <iframe
+                  src={value.videoUrl}
+                  className="absolute inset-0 w-full h-full rounded-md shadow-lg"
+                  title={value.title}
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
             <div
               className="w-full sm:w-1/2 px-5 flex justify-center text-center sm:text-left"
               data-aos="fade-up"
             >
               <div className='flex flex-col'>
-                <h3 className="text-6xl font-semibold text-gray-800 transition-transform duration-300 transform hover:scale-105">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-800 transition-transform duration-300 transform hover:scale-105">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 mt-3 leading-relaxed">
+                <p className="text-gray-600 text-lg sm:text-xl mt-3 leading-relaxed">
                   {value.description}
                 </p>
               </div>
