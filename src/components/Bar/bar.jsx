@@ -1,29 +1,107 @@
 import { useEffect, useState } from "react";
 
-export default function Bar() {
-  const [number, setNumber] = useState(0);
-  const targetNumber = 1000;
+export default function StatsBar() {
+  const [inView, setInView] = useState(false);
+  const [clientsCount, setClientsCount] = useState(0);
+  const [videosCount, setVideosCount] = useState(0);
+  const [viewsCount, setViewsCount] = useState(0);
+
+  const targetClients = 15;
+  const targetVideos = 1000;
+  const targetViews = 5;
+
+  const incrementClients = 1;
+  const incrementVideos = 10;  
+  const incrementViews = 1;  
+  const animationSpeedClients = 100; 
+  const animationSpeedVideos = 30;  
+  const animationSpeedViews = 150; 
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setNumber((prevNumber) => {
-        if (prevNumber < targetNumber) {
-          return prevNumber + 10;
-        } else {
-          clearInterval(interval);
-          return prevNumber;
-        }
-      });
-    }, 10);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.5 }  
+    );
+    observer.observe(document.querySelector("#stats-bar"));
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, []); 
+  useEffect(() => {
+    if (inView) {
+      // Clients Animation (Slow)
+      const clientsInterval = setInterval(() => {
+        setClientsCount((prevCount) => {
+          if (prevCount < targetClients) {
+            return prevCount + incrementClients;
+          } else {
+            clearInterval(clientsInterval);
+            return targetClients;
+          }
+        });
+      }, animationSpeedClients);
+
+      // Videos Animation (Faster)
+      const videosInterval = setInterval(() => {
+        setVideosCount((prevCount) => {
+          if (prevCount < targetVideos) {
+            return prevCount + incrementVideos;
+          } else {
+            clearInterval(videosInterval);
+            return targetVideos;
+          }
+        });
+      }, animationSpeedVideos);
+
+      // Views Animation (Stepwise, 1M increment)
+      const viewsInterval = setInterval(() => {
+        setViewsCount((prevCount) => {
+          if (prevCount < targetViews) {
+            return prevCount + incrementViews;
+          } else {
+            clearInterval(viewsInterval);
+            return targetViews;
+          }
+        });
+      }, animationSpeedViews);
+
+      return () => {
+        clearInterval(clientsInterval);
+        clearInterval(videosInterval);
+        clearInterval(viewsInterval);
+      };
+    }
+  }, [inView]);
 
   return (
-    <div className="flex justify-between text-3xl bg-slate-500 font-bold pt-52 h-16 mb-7 mt-7 ">
-      <div>15+ Clients</div>
-      <div>100+ Videos</div>
-      <div>5M+ Views</div>
-    </div>
+    <section
+      id="stats-bar"
+      className=" items-center bg-slate-500 py-20 mt-12 mb-16"
+    >
+      <div className="flex justify-between px-40 text-center text-white font-bold text-2xl md:text-3xl">
+        <div className="font-sans">
+          <span className="block text-4xl md:text-5xl">{clientsCount}+</span>
+          Clients
+        </div>
+        <div>
+          <span className="block font-sans text-4xl md:text-5xl">{videosCount}+</span>
+          Videos
+        </div>
+        <div>
+          <span className="block text-4xl font-sans md:text-5xl">{viewsCount}M+</span>
+          Views
+        </div>
+      </div>
+    </section>
   );
 }
