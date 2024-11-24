@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <header id="home" className="relative z-0 h-screen">
+    <header id="home" className="relative z-0 h-[100dvh]">
       <video autoPlay muted loop className="absolute w-full h-full object-cover" id="background-video">
         <source src="/assets/imgs/portfolio-video.mp4" type="video/mp4" />
       </video>
