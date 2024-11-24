@@ -59,23 +59,42 @@ const Navbar = () => {
             ))}
           </motion.ul>
         ) : (
-          // Mobile Hamburger Menu
+          // Mobile Hamburger Menu with animation
           <button
             onClick={toggleMenu}
             aria-expanded={isOpen ? 'true' : 'false'}
-            className="md:hidden text-white"
+            className="md:hidden text-gray-400"
           >
-            <span className="block w-6 h-0.5 bg-white my-1.5"></span>
-            <span className="block w-6 h-0.5 bg-white my-1.5"></span>
-            <span className="block w-6 h-0.5 bg-white my-1.5"></span>
+            {/* Animated hamburger icon */}
+            <motion.span
+              className="block w-6 h-0.5 bg-gray-400 my-1.5"
+              animate={{
+                rotate: isOpen ? 45 : 0,
+                y: isOpen ? 8 : 0,
+              }}
+              transition={{ duration: 0.3 }}
+            ></motion.span>
+            <motion.span
+              className="block w-6 h-0.5 bg-gray-400 my-1.5"
+              animate={{ opacity: isOpen ? 0 : 1 }}
+              transition={{ duration: 0.3 }}
+            ></motion.span>
+            <motion.span
+              className="block w-6 h-0.5 bg-gray-400 my-1.5"
+              animate={{
+                rotate: isOpen ? -45 : 0,
+                y: isOpen ? -8 : 0,
+              }}
+              transition={{ duration: 0.3 }}
+            ></motion.span>
           </button>
         )}
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown with Animation */}
       {isOpen && !isLargeScreen && (
         <motion.div
-          className="md:hidden bg-white text-black shadow-lg"
+          className="md:hidden bg-transparent text-gray-400 shadow-lg"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
