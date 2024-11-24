@@ -15,12 +15,12 @@ const About = () => {
         />
       </div>
        
-      <div className="max-w-md content-center">
+      <div className="max-w-md flex flex-col content-center">
         <h2 className="text-3xl md:text-4xl font-semibold text-center text-white mb-4">Who Am I?</h2>
         <p className="text-gray-200 text-2xl text-center italic mb-6">
           "I'm no one special, just a guy with some skills <br/> trying to be better."
         </p>
-        <button><a href='contact'>Text me</a></button>
+        <a className='text-center w-auto py-3 px-8 bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold text-lg rounded-full shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:from-green-500 hover:to-blue-600' href='#contact'>Text me</a>
       </div>
     </section>
   );
