@@ -15,16 +15,18 @@ const About = () => {
         />
       </div>
        
-      <div className="max-w-md">
-        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">Who Am I?</h2>
-        <p className="text-gray-200 text-lg mb-6">
-          I am a dedicated content creator specializing in VFX artistry and video editing. With a passion for creating stunning visuals, I bring your creative ideas to life through innovative video projects and compelling storytelling.
+      <div className="max-w-md content-center">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center text-white mb-4">Who Am I?</h2>
+        <p className="text-gray-200 text-2xl text-center italic mb-6">
+          "I'm no one special, just a guy with some skills <br/> trying to be better."
         </p>
-        <IntroButton
+        {/* <IntroButton
           href={"mailto:anuragpal63866@gmail.com"}
-          className={"relative pl-1 pb-5"}
-          name={"Hire Me"}
-        />
+          className={"relative pl-1 text-center pb-5"}
+          name={"Text me"}
+        /> */} 
+        <a href='contact'>Text me</a>
+
       </div>
     </section>
   );

@@ -1,42 +1,67 @@
-import React, { useEffect } from 'react';
-import IntroButton from '../Button/button';
+import React from 'react';
 
 const Contact = () => {
-  useEffect(() => {
-    const elements = document.querySelectorAll('.animate-fadeInUp');
-    elements.forEach((el, index) => {
-      el.style.animationDelay = `${index * 0.2}s`;
-      el.classList.add('fade-in-up');
-    });
-  }, []);
-
   return (
     <section id="contact" className="py-20 text-center bg-gray-100">
-      <h2 className="text-4xl font-bold mb-10 animate-fadeInUp">Contact Me</h2>
-      <form className="w-full max-w-lg mx-auto space-y-6">
-        <div className="flex flex-wrap -mx-3">
-          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0 animate-fadeInUp">
-            <input
-              className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded-md py-3 px-4 leading-tight transition duration-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none transform hover:-translate-y-1"
-              type="text"
-              placeholder="Your Name"
+      <h2 className="text-4xl font-bold mb-10">Contact Info</h2>
+      <div className="container mx-auto bg-white shadow-lg rounded-lg p-6">
+        {/* Social Links */}
+        <div className="mt-8 flex justify-center space-x-6">
+          {/* YouTube */}
+          <a
+            href="https://www.youtube.com/@AnonymousAnuraG"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-red-500 transition-colors duration-300"
+          >
+            <img
+              src="https://img.icons8.com/color/48/youtube-play.png"
+              alt="YouTube"
+              className="h-8 w-8"
             />
-          </div>
-          <div className="w-full md:w-1/2 px-3 animate-fadeInUp">
-            <input
-              className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded-md py-3 px-4 leading-tight transition duration-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none transform hover:-translate-y-1"
-              type="email"
-              placeholder="Your Email"
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/_anuuuurag/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-pink-500 transition-colors duration-300"
+          >
+            <img
+              src="https://img.icons8.com/color/48/instagram-new.png"
+              alt="Instagram"
+              className="h-8 w-8"
             />
-          </div>
+          </a>
+
+          {/* Email */}
+          <a
+            href="mailto:anuragpal63866@gmail.com"
+            className="hover:text-blue-500 transition-colors duration-300"
+          >
+            <img
+              src="https://img.icons8.com/color/48/secured-letter.png"
+              alt="Email"
+              className="h-8 w-8"
+            />
+          </a>
+
+          {/* Twitter/X */}
+          <a
+            href="https://x.com/_anuuurag"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-500 transition-colors duration-300"
+          >
+            <img
+              src="https://img.icons8.com/color/48/twitter--v1.png"
+              alt="Twitter"
+              className="h-8 w-8"
+            />
+          </a>
         </div>
-        <textarea
-          className="appearance-none block w-full bg-white text-gray-700 border border-gray-300 rounded-md py-3 px-4 leading-tight mb-6 transition duration-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none transform hover:-translate-y-1 animate-fadeInUp"
-          rows="5"
-          placeholder="Write Something"
-        ></textarea>
-        <IntroButton name={"Send Message"} className={"flex justify-center items-center relative pl-1 pb-5"}/>
-      </form>
+      </div>
     </section>
   );
 };

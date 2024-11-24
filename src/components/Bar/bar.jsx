@@ -20,8 +20,10 @@ export default function Bar() {
   }, []);
 
   return (
-    <div className="flex justify-center text-3xl font-semibold">
-      Views: {number}
+    <div className="flex justify-between text-3xl bg-slate-500 font-bold pt-52 h-16 mb-7 mt-7 ">
+      <div>15+ Clients</div>
+      <div>100+ Videos</div>
+      <div>5M+ Views</div>
     </div>
   );
 }

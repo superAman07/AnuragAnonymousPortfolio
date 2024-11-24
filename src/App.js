@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import Bar from "./components/Bar/bar.jsx";
+const Navbar = lazy(()=>import("./components/Navbar/navbar.jsx"));
 const Header = lazy(() => import("./components/Header/header.jsx"));
 const Footer = lazy(() => import("./components/Footer/footer.jsx"));
 const About = lazy(() => import("./components/About/about.jsx"));
@@ -11,29 +12,13 @@ function App() {
   return (
     <div className="w-full overflow-hidden">
       <Suspense fallback={<div className="text-center py-10">Anurag's Portfolio is loading...</div>}>
-        <Suspense fallback={<div>Loading Header...</div>}>
+          <Navbar />
           <Header />
-        </Suspense>
-        <Dot />
-        <Suspense fallback={<div>Loading Projects...</div>}>
           <Projects />
-        </Suspense>
-        <Dot />
-        {/* <Suspense fallback={<div>Loading About Section...</div>}>
-          <Bar />
-        </Suspense> */}
-        {/* <Dot /> */}
-        <Suspense fallback={<div>Loading About Section...</div>}>
+          {/* <Bar/> */}
           <About />
-        </Suspense>
-        <Dot />
-        <Suspense fallback={<div>Loading Contact Section...</div>}>
           <Contact />
-        </Suspense>
-        <Dot />
-        <Suspense fallback={<div>Loading Footer...</div>}>
-          <Footer />
-        </Suspense>
+          <Footer /> 
       </Suspense>
     </div>
   );

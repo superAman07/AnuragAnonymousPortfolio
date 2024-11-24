@@ -19,7 +19,7 @@ const Projects = () => {
         className="text-3xl md:text-4xl font-bold text-center mb-10"
         data-aos="fade-up"
       >
-        Editing & VFX Skills
+        Editing Work
       </h2>
       <div className="flex flex-col items-center space-y-16">
         {Collections.map((value, index) => (
@@ -33,21 +33,23 @@ const Projects = () => {
             <div className="flex-shrink-0 w-full sm:w-1/2 transition-transform duration-300 transform hover:scale-105">
               <iframe
                 src={value.videoUrl}
-                className="w-full h-[100%] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-md shadow-lg"
+                className="w-full h-full sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-md shadow-lg"
                 title={value.title}
                 allowFullScreen
               ></iframe>
             </div> 
             <div
-              className="w-full sm:w-1/2 px-5 text-center sm:text-left"
+              className="w-full sm:w-1/2 px-5 flex justify-center text-center sm:text-left"
               data-aos="fade-up"
             >
-              <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 transition-transform duration-300 transform hover:scale-105">
-                {value.title}
-              </h3>
-              <p className="text-gray-600 mt-3 leading-relaxed">
-                {value.description}
-              </p>
+              <div className='flex flex-col'>
+                <h3 className="text-6xl font-semibold text-gray-800 transition-transform duration-300 transform hover:scale-105">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600 mt-3 leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
             </div>
           </div>
         ))}
