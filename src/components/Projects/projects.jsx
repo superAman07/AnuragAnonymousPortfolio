@@ -54,7 +54,7 @@ const Projects = () => {
               data-aos="fade-up"
             >
               <div className="flex flex-col">
-                <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-800 transition-transform duration-300 transform hover:scale-105">
+                <h3 className="text-3xl sm:text-2xl md:text-4xl font-semibold text-gray-800 transition-transform duration-300 transform hover:scale-105">
                   {value.title}
                 </h3>
                 <p className="text-gray-600 text-lg sm:text-xl mt-3 leading-relaxed">
