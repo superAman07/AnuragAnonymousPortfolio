@@ -2,8 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Header = () => {
+  // Function to handle the scroll
+  const handleScroll = () => {
+    const nextSection = document.getElementById('projects');
+    if (nextSection) {
+      nextSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
-    <header id="home" className="relative z-0 h-screen"> 
+    <header id="home" className="relative z-0 h-screen">
       <video autoPlay muted loop className="absolute w-full h-full object-cover" id="background-video">
         <source src="/assets/imgs/portfolio-video.mp4" type="video/mp4" />
       </video>
@@ -33,19 +44,26 @@ const Header = () => {
             </motion.p>
           ))}
         </div>
-      </div>
-
-      {/* Scroll Down Link */}
+      </div> 
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white">
-        <motion.a
-          href="#projects"
-          className="underline font-medium text-sm md:text-md hover:text-gray-300 transition duration-300"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.5, delay: 1 }}
+        <motion.div
+          className="text-3xl md:text-4xl"
+          animate={{ y: [0, 20, 0] }}  
+          transition={{ repeat: Infinity, duration: 1.5 }}
         >
-          Scroll down to see more
-        </motion.a>
+           
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="w-10 h-10 mx-auto text-white cursor-pointer"
+            onClick={handleScroll}   
+          >
+            <path d="M12 19l-7-7h14l-7 7z" />
+          </svg>
+        </motion.div>
       </div>
     </header>
   );
