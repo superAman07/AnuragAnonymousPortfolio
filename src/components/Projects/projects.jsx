@@ -32,17 +32,28 @@ const Projects = () => {
               <div className="relative w-full pt-[56.25%]">
                 <iframe
                   src={value.videoUrl}
-                  className="absolute inset-0 w-full h-full rounded-md shadow-lg"
+                  className="absolute inset-0 w-full h-full rounded-md shadow-lg border-none"
+                  style={{
+                    position: 'absolute',
+                    top: '-1px',
+                    left: '-1px',
+                    right: '-1px',
+                    bottom: '-1px',
+                    width: 'calc(100% + 1px)',
+                    height: 'calc(100% + 1px)',
+                  }}
                   title={value.title}
                   allowFullScreen
                 ></iframe>
               </div>
             </div>
+
+            {/* Text Content */}
             <div
               className="w-full sm:w-1/2 px-5 flex justify-center text-center sm:text-left"
               data-aos="fade-up"
             >
-              <div className='flex flex-col'>
+              <div className="flex flex-col">
                 <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-800 transition-transform duration-300 transform hover:scale-105">
                   {value.title}
                 </h3>
