@@ -5,13 +5,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
-
-  // Toggle the menu in mobile view
+ 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  // Change navbar style on scroll
+ 
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setScrolled(true);
@@ -19,8 +17,7 @@ const Navbar = () => {
       setScrolled(false);
     }
   };
-
-  // Update screen size
+ 
   useEffect(() => {
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth >= 768);
@@ -34,13 +31,12 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  // Menu items
+ 
   const menuItems = ['Projects', 'About', 'Contact'];
 
   return (
     <nav
-      className={`fixed w-full z-10 p-4 md:px-28 transition-all duration-300 ${
+      className={`fixed w-full z-10 p-8 md:px-28 transition-all duration-300 ${
         scrolled ? 'bg-white text-black shadow-md' : 'bg-transparent text-white'
       }`}
     >
