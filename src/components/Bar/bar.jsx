@@ -37,6 +37,7 @@ export default function StatsBar() {
       }
     };
   }, []); 
+
   useEffect(() => {
     if (inView) {
       // Clients Animation (Slow)
@@ -86,18 +87,18 @@ export default function StatsBar() {
   return (
     <section
       id="stats-bar"
-      className=" items-center bg-slate-500 py-20 mt-12 mb-16"
+      className="items-center bg-slate-500 py-20 mt-12 mb-16"
     >
-      <div className="flex justify-between px-40 text-center text-white font-bold text-2xl md:text-3xl">
-        <div className="font-sans">
+      <div className="flex flex-wrap justify-between px-4 md:px-40 text-center text-white font-bold text-2xl md:text-3xl">
+        <div className="font-sans w-full sm:w-1/3 mb-8 sm:mb-0">
           <span className="block text-4xl md:text-5xl">{clientsCount}+</span>
           Clients
         </div>
-        <div>
+        <div className="w-full sm:w-1/3 mb-8 sm:mb-0">
           <span className="block font-sans text-4xl md:text-5xl">{videosCount}+</span>
           Videos
         </div>
-        <div>
+        <div className="w-full sm:w-1/3">
           <span className="block text-4xl font-sans md:text-5xl">{viewsCount}M+</span>
           Views
         </div>
