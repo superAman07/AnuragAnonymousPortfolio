@@ -35,6 +35,9 @@ const Navbar = () => {
     };
   }, []);
 
+  // Menu items
+  const menuItems = ['Projects', 'About', 'Contact'];
+
   return (
     <nav
       className={`fixed w-full z-10 p-4 md:px-28 transition-all duration-300 ${
@@ -43,11 +46,11 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center">
         <a className="text-2xl font-bold" href="#home">Anonymous Anurag</a>
-        
+
         {/* Desktop Navbar Links (for large screens) */}
         {isLargeScreen ? (
           <motion.ul className="hidden md:flex space-x-6">
-            {['Projects','About','Contact'].map((item) => (
+            {menuItems.map((item) => (
               <li key={item}>
                 <motion.a
                   href={`#${item.toLowerCase()}`}
@@ -60,7 +63,16 @@ const Navbar = () => {
             ))}
           </motion.ul>
         ) : (
-          <div />
+          // Mobile Hamburger Menu
+          <button
+            onClick={toggleMenu}
+            aria-expanded={isOpen ? 'true' : 'false'}
+            className="md:hidden text-white"
+          >
+            <span className="block w-6 h-0.5 bg-white my-1.5"></span>
+            <span className="block w-6 h-0.5 bg-white my-1.5"></span>
+            <span className="block w-6 h-0.5 bg-white my-1.5"></span>
+          </button>
         )}
       </div>
 
@@ -74,40 +86,13 @@ const Navbar = () => {
           transition={{ duration: 0.3 }}
         >
           <ul className="flex flex-col space-y-4 p-4" id="mobile-menu">
-            {['Projects', 'About', 'Contact'].map((item) => (
+            {menuItems.map((item) => (
               <li key={item}>
                 <motion.a
                   href={`#${item.toLowerCase()}`}
                   className="hover:text-gray-500 transition duration-300"
                   whileHover={{ scale: 1.1 }}
                   onClick={toggleMenu}
-                >
-                  {item}
-                </motion.a>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      )}
-
-      {/* Hamburger Menu for Large Screen */}
-      {isOpen && isLargeScreen && (
-        <motion.div
-          className="absolute left-0 top-16 bg-white text-black shadow-lg w-full p-4 flex justify-between items-center"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -100 }}
-          transition={{ duration: 0.3 }}
-        >
-          {/* Close Button */}
-          <button onClick={toggleMenu} className="text-2xl font-bold">X</button>
-          <ul className="flex space-x-6">
-            {[ 'Projects', 'About','Contact'].map((item) => (
-              <li key={item}>
-                <motion.a
-                  href={`#${item.toLowerCase()}`}
-                  className="hover:text-gray-500 transition duration-300"
-                  whileHover={{ scale: 1.1 }}
                 >
                   {item}
                 </motion.a>
