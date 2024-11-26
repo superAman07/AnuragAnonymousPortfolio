@@ -7,7 +7,7 @@ export default function StatsBar() {
   const [viewsCount, setViewsCount] = useState(0);
 
   const targetClients = 15;
-  const targetVideos = 1000;
+  const targetVideos = 100;
   const targetViews = 5;
 
   const incrementClients = 1;
